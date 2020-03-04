@@ -1,0 +1,44 @@
+{
+  "name": "@vitrine/electron-hot-reloader",
+  "version": "1.0.0",
+  "description": "Simplest way to reload an electron app on file changes!",
+  "author": "Paul Roman <roman.paul.pro@gmail.com>",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "babel src -d dist",
+    "publish": "npm run build && npm publish"
+  },
+  "dependencies": {
+    "chalk": "~3.0.0",
+    "chokidar": "~3.3.1",
+    "date-time": "~3.1.0",
+    "electron-is-dev": "~1.1.0",
+    "find-up": "~4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "~13.7.7",
+    "babel-cli": "~6.26.0",
+    "babel-plugin-transform-object-rest-spread": "~6.26.0",
+    "babel-preset-env": "~1.7.0",
+    "prettier": "~1.19.1"
+  },
+  "peerDependencies": {
+    "electron": "^8.0.3"
+  },
+  "homepage": "https://github.com/vitrine-app/electron-reloader#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitrine-app/electron-reloader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitrine-app/electron-reloader/issues"
+  },
+  "keywords": [
+    "electron",
+    "reload",
+    "auto-reload",
+    "node"
+  ]
+}
