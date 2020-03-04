@@ -1,7 +1,7 @@
 {
   "name": "@vitrine/electron-hot-reloader",
   "version": "1.0.0",
-  "description": "Simplest way to reload an electron app on file changes!",
+  "description": "Use hot reloading for Electron processes during development.",
   "author": "Paul Roman <roman.paul.pro@gmail.com>",
   "license": "MIT",
   "main": "dist/main.js",
@@ -27,13 +27,13 @@
   "peerDependencies": {
     "electron": "^8.0.3"
   },
-  "homepage": "https://github.com/vitrine-app/electron-reloader#readme",
+  "homepage": "https://github.com/vitrine-app/electron-hot-reloader#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitrine-app/electron-reloader.git"
+    "url": "git+https://github.com/vitrine-app/electron-hot-reloader.git"
   },
   "bugs": {
-    "url": "https://github.com/vitrine-app/electron-reloader/issues"
+    "url": "https://github.com/vitrine-app/electron-hot-reloader/issues"
   },
   "keywords": [
     "electron",
