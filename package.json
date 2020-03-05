@@ -1,6 +1,6 @@
 {
   "name": "@vitrine/electron-hot-reloader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Use hot reloading for Electron processes during development.",
   "author": "Paul Roman <roman.paul.pro@gmail.com>",
   "license": "MIT",
