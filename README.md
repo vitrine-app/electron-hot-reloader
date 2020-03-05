@@ -1,10 +1,10 @@
 # Vitrine electron-hot-reloader
 
-> Simple auto-reloading for Electron apps during development
+> Simple auto-reloading for Electron apps during development using webpack
 
 It *just works*. When files used in the main process are changed, the app is restarted, and when files used in the browser window are changed, the page is reloaded.
 
-Note that it will not work correctly if you transpile the main process JS files of your app, but it doesn't make sense to do that anyway.
+Note that it will only work if you bundle your codebase in a single file using webpack or another bundler.
 
 ## Install
 
@@ -30,13 +30,25 @@ The `try/catch` is needed so it doesn't throw `Cannot find module '@vitrine/elec
 
 ## API
 
-### reloader(module, options?)
+### reloader(watchedPath, appDirectory, electronPath, options?)
 
-#### module
+#### watchedPath
 
-Type: `object`
+Type: `string`
 
-The global `module` object.
+The path of files that are watched for reloading.
+
+#### appDirectory
+
+Type: `string`
+
+The directory where your `package.json` is.
+
+#### electronPath
+
+Type: `string`
+
+The path of the Electron binary used to spawn child processes.
 
 #### options
 
@@ -55,17 +67,8 @@ Type: `Array<string | RegExp>`
 
 Ignore patterns passed to [`chokidar`](https://github.com/paulmillr/chokidar#path-filtering). By default, files/directories starting with a `.`, `.map` files, and `node_modules` directories are ignored. This option is additive to those.
 
-##### watchRenderer
+##### argv
 
-Type: `boolean`\
-Default: `true`
+Type: `Array<string>`
 
-Watch files used in the renderer process and reload the window when they change.
-
-Setting this to `false` can be useful if you use a different reload strategy in the rendererer process, like [`HMR`](https://webpack.js.org/concepts/hot-module-replacement/).
-
-## Tip
-
-### Using it with Webpack watch mode
-
-Just add the source directory to the `ignore` option. The dist directory is already watched, so when a source file changes, webpack will build it and output it to the dist directory, which this module will detect.
+Args passed to Electron child process when spawned.
